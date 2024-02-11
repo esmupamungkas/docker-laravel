@@ -1,0 +1,7 @@
+services:
+  app:
+    image: laravelfpm:latest
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "65080:80"
