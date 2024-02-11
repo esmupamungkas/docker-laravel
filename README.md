@@ -20,22 +20,19 @@ docker compose up -d
 ```
 
 > [!NOTE]
-> Additional notes
-
-Inside compose.yml, we can see current configuration :
-
-```yaml
-services:
-  app:
-    image: laravelfpm:latest
-    volumes:
-      - .:/var/www/html
-    ports:
-      - "65080:80"
-```
-We mounts application folder as volume so we can do some codes or environment configuration update without rebuilding container, only container restart required.
-
-Port bind to 65080, change it to your needs for reverse proxy or direct serve.
+> Inside compose.yml, we can see current configuration :
+> ```yaml
+> services:
+>   app:
+>     image: laravelfpm:latest
+>     volumes:
+>       - .:/var/www/html
+>     ports:
+>       - "65080:80"
+> ```
+> We mounts application folder as volume so we can do some codes or environment configuration update without rebuilding container, only container restart required.
+>
+>Port bind to 65080, change it to your needs for reverse proxy or direct serve.
 
 <br>
 <h1 align="center"> Me no speak Americano? </h1>
@@ -59,19 +56,16 @@ Lalu jalankan image tersebut dengan docker compose :
 docker compose up -d
 ```
 > [!NOTE]
-> Catatan Tambahan
-
-Di dalam file compose.yml, bisa dilihat konfigurasi sebagai berikut :
-
-```yaml
-services:
-  app:
-    image: laravelfpm:latest
-    volumes:
-      - .:/var/www/html
-    ports:
-      - "65080:80"
-```
-Mount folder aplikasi sebagai volume sehingga kita bisa melakukan update pada kode dan konfigurasi environment tanpa melakukan rebuild container, hanya perlu restart container.
-
-Binding port dilakukan ke port 65080, sesuaikan dengan kebutuhan untuk reverse proxy atau akses langsung.
+> Di dalam file compose.yml, bisa dilihat konfigurasi sebagai berikut :
+> ```yaml
+> services:
+>   app:
+>     image: laravelfpm:latest
+>     volumes:
+>       - .:/var/www/html
+>     ports:
+>       - "65080:80"
+> ```
+>Mount folder aplikasi sebagai volume sehingga kita bisa melakukan update pada kode dan konfigurasi environment tanpa melakukan rebuild container, hanya perlu restart container.
+>
+>Binding port dilakukan ke port 65080, sesuaikan dengan kebutuhan untuk reverse proxy atau akses langsung.
