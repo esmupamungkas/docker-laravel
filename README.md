@@ -1,5 +1,5 @@
 <h3 align="center">
-<em>"When everyone's super. No one will be."</em><br>
+<em>"With everyone's super. No one will be."</em><br>
 -- Syndrome (The Incredibles)
 </h3>
 
