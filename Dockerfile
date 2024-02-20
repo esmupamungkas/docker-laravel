@@ -1,4 +1,4 @@
-FROM php:8.1-fpm-alpine
+FROM php:8.2-fpm-alpine
 
 # Install system dependencies
 RUN apk --no-cache add \
@@ -19,11 +19,12 @@ RUN apk --no-cache add \
     nginx \
     supervisor \
     oniguruma-dev \
+    icu-dev \
     && rm -rf /var/cache/apk/*
 
 # Install PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) pdo_mysql mbstring exif pcntl bcmath gd zip
+    && docker-php-ext-install -j$(nproc) pdo_mysql mbstring exif pcntl bcmath gd zip intl
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
