@@ -1,6 +1,7 @@
 services:
   app:
     image: laravelfpm:latest
+    container_name: myapp
     volumes:
       - .:/var/www/html
     ports:
