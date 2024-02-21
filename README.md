@@ -8,7 +8,7 @@
 ### # About Project
 This project was made to run a Laravel-based application by utilizing minimal docker container in a case where application was configured to connect to a remote database inside other server and there's a preinstalled webserver inside host.
 
-- Built using [official image](https://hub.docker.com/layers/library/php/8.1-fpm-alpine/images/sha256-fed51bf5b0a3c41418d6252e276d3b82c3077517099095eee67e1d652ea4372c?context=explore) with PHP 8.1 FPM preinstalled, based on Alpine Linux.
+- Built using official image with PHP 8.2 FPM preinstalled, based on Alpine Linux.
 - Nginx webserver with preconfigured configurations to run Laravel-based application, installed inside this container, not by using separate container.
 - Supervisor with a preconfigured configuration to run all services when container being run for the first time or after being restarted.
 
@@ -30,14 +30,15 @@ docker compose up -d
 > services:
 >   app:
 >     image: laravelfpm:latest
+>     container_name: myapp
 >     volumes:
 >       - .:/var/www/html
 >     ports:
 >       - "65080:80"
 > ```
-> We mounts application folder as volume so we can do some codes or environment configuration update without rebuilding container, only container restart required.
->
->Port bind to 65080, change it to your needs for reverse proxy or direct serve.
+> - We mounts application folder as volume so we can do some codes or environment configuration update without rebuilding container, only container restart required.
+> - Change container_name with your preferred name, or use my name if you have no idea.
+> - Port bind to 65080, change it to your needs for reverse proxy or direct serve.
 
 <br>
 <h1 align="center"> Me no speak Americano? </h1>
@@ -66,11 +67,12 @@ docker compose up -d
 > services:
 >   app:
 >     image: laravelfpm:latest
+>     container_name: myapp
 >     volumes:
 >       - .:/var/www/html
 >     ports:
 >       - "65080:80"
 > ```
->Mount folder aplikasi sebagai volume sehingga kita bisa melakukan update pada kode dan konfigurasi environment tanpa melakukan rebuild container, hanya perlu restart container.
->
->Binding port dilakukan ke port 65080, sesuaikan dengan kebutuhan untuk reverse proxy atau akses langsung.
+> - Mount folder aplikasi sebagai volume sehingga kita bisa melakukan update pada kode dan konfigurasi environment tanpa melakukan rebuild container, hanya perlu restart container.
+> - Ubah container_name dengan nama yang diinginkan, atau gunakan nama saya jika tidak punya ide.
+> - Binding port dilakukan ke port 65080, sesuaikan dengan kebutuhan untuk reverse proxy atau akses langsung.
