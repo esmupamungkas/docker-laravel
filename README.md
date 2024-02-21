@@ -46,7 +46,7 @@ docker compose up -d
 ### # Tentang Proyek
 Proyek ini dibuat untuk menjalankan aplikasi Laravel di dalam server menggunakan container yang dibangun dengan minimal dan ada dalam kondisi dimana aplikasi dikonfigurasi untuk tersambung dengan database di server lain dan sudah ada webserver terinstall di host server.
 
-- Dibangun menggunakan [official image](https://hub.docker.com/layers/library/php/8.1-fpm-alpine/images/sha256-fed51bf5b0a3c41418d6252e276d3b82c3077517099095eee67e1d652ea4372c?context=explore) yang sudah terpasang PHP 8.1 FPM, dan berbasiskan Alpine Linux.
+- Dibangun menggunakan official image yang sudah terpasang PHP 8.2 FPM, dan berbasiskan Alpine Linux.
 - Nginx webserver dengan konfigurasi preconfigured untuk kebutuhan menjalankan aplikasi berbasis Laravel, terpasang di dalam container, bukan menggunakan container terpisah.
 - Supervisor dengan konfigurasi preconfigured untuk menjalankan semua service saat container dijalankan atau direstart
 
