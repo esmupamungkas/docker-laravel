@@ -1,0 +1,17 @@
+:80 {
+	root * /var/www/html/app/public
+
+	log {
+		output file /var/www/html/log/caddy-access.log
+		format console
+	}
+
+	encode zstd gzip
+	file_server
+	php_fastcgi localhost:9000
+
+	@dotFiles {
+		path */.*
+	    not path /.well-known/*
+    }
+}
